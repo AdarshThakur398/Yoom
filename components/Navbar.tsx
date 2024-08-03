@@ -2,6 +2,7 @@ import React from 'react'
 import Image  from 'next/image'
 import Link from 'next/link'
 import MobileNav from './MobileNav'
+import { SignedIn,UserButton } from '@clerk/nextjs'
 const Navbar = () => {
   return (
     <div className="flex-between px-6 py-4 fixed z-50 w-full bg-dark-1 lg:px-10">
@@ -15,6 +16,9 @@ const Navbar = () => {
       <p className= "text-[26px] font extrabold  text-white max-sm:hidden"> Yoom</p>
       </Link>
       <div className="flex-between gap-5">
+        <SignedIn>
+        <UserButton/>
+        </SignedIn>
         <MobileNav/>
       </div>
     </div>
