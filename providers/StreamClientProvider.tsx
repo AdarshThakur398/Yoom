@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { error } from 'console';
 import Loader from '@/components/Loader';
-  const apiKey =    process.env.NEXT_PUBLIC_STREAM_API_KEY;
+  const apiKey =process.env.NEXT_PUBLIC_STREAM_API_KEY;
 
 
   
