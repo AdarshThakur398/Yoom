@@ -5,12 +5,12 @@ import {StreamCall,StreamTheme} from '@stream-io/video-react-sdk'
 import { useState } from 'react'
 import MeetingSetup from '@/components/MeetingSetup'
 import MeetingRoom from '@/components/MeetingRoom'
-import { UsegGetCallbyId } from '@/hooks/UsegGetCallbyId'
+import { UseGetCallbyId } from '@/hooks/UseGetCallbyId'
 import Loader from '@/components/Loader'
 const Meeting = ({params : {id} } : {params : {id:string}}) => {
   const {user,isLoaded} = useUser();
-  const [isSetup,isSetupCompleted] = useState(false);
-  const {call,isCallLoading}=UsegGetCallbyId(id);
+  const [isSetupComplete,setIsSetupCompleted] = useState(false);
+  const {call,isCallLoading}=UseGetCallbyId(id);
   if(!isLoaded || isCallLoading) return <Loader/>
   
   if (!call) return (
@@ -22,8 +22,8 @@ const Meeting = ({params : {id} } : {params : {id:string}}) => {
     <main className='h-screen w-full'>
       <StreamCall call={call}>
         <StreamTheme>
-{!isSetupCompleted ? (
-<MeetingSetup/>
+{!isSetupComplete ? (
+<MeetingSetup setIsSetupCompleted={setIsSetupCompleted}/>
 ): (
   <MeetingRoom/>
 )

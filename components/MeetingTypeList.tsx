@@ -11,6 +11,7 @@ import { useToast } from "@/components/ui/use-toast"
 
 
 const MeetingTypeList = () => {
+  const router=useRouter();
   const user = useUser();
     const client = useStreamVideoClient();
     const [values,setValues] = useState({
@@ -62,7 +63,7 @@ const MeetingTypeList = () => {
            console.log("error!  ")
          }
     }
-    const router=useRouter();
+    
 
 
     const [meetingState,setMeetingState]=useState<'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined>();
