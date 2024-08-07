@@ -2,6 +2,14 @@ import React, { ReactNode } from 'react'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import StreamVideoProvider from '@/providers/StreamClientProvider'
+import { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: "Doom",
+  description: "DOOM video calling",
+  icons: {
+    icon:'/icons/logo.svg'
+  }
+};
 const HomeLayout = ({children} : {children : ReactNode}) => {
   return (
     <main className="relative"> 
