@@ -10,6 +10,7 @@ import {useStreamVideoClient,Call} from "@stream-io/video-react-sdk"
 import { useToast } from "@/components/ui/use-toast"
 import { Textarea } from "@/components/ui/textarea"
 import ReactDatePicker from 'react-datepicker'
+import { Input } from "@/components/ui/input"
 
 const MeetingTypeList = () => {
   const router=useRouter();
@@ -83,6 +84,13 @@ const MeetingTypeList = () => {
   className="text-center"
   buttonText="Start Meeting"
   handleClick ={createMeeting}/> 
+   <MeetingModal
+  isOpen={meetingState === 'isJoiningMeeting'}
+  onClose = {() => setMeetingState(undefined)}
+  title='Type the link here'
+  className="text-center"
+  buttonText="Join Meeting"
+  handleClick ={() => router.push(values.link)}> <Input placeholder='Meeting Link'  className='focus-visible:ring-0 focus-visible:ring-offset-0 bg-dark-3 border-none'  onChange={(e) => setValues({...values,link:e.target.value})}/></MeetingModal>
 {!CallDetails ?  (
   <MeetingModal
   isOpen={meetingState === 'isScheduleMeeting'}
@@ -93,7 +101,7 @@ const MeetingTypeList = () => {
     <div className='flex flex-col gap-2.5'>
       <label className='text-base text-normal leading-[22px] text-sky-2'>Add a description</label>
       <Textarea className='bg-dark-3 border-none focus-visible:ring-0 focus-visible:ring-offset-0'
-      onChange={(e) => {setValues({...values,description:e.target.value})}}/>
+      onChange={(e) => {setValues({...values,description:e.target.value})}}/> 
     </div>
     <div className='flex flex-col gap-2.5'>
       <label className='text-base text-normal leading-[22px] text-sky-2'>Select Date and Time</label>

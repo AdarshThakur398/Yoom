@@ -39,7 +39,9 @@ const MeetingSetup = ({setIsSetupCompleted} : {
         }}> 
          Join meeting
         </Button>
-     
+        <div className='absolute top-0 right-0 m-4 text-sm text-gray-400'>
+        Developed by Adarsh Thakur
+      </div>
     </div>
   )
 }
