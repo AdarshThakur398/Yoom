@@ -4,8 +4,8 @@ import Sidebar from '@/components/Sidebar'
 import StreamVideoProvider from '@/providers/StreamClientProvider'
 import { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: "Doom",
-  description: "DOOM video calling",
+  title: "Yoom",
+  description: "YOOM video calling",
   icons: {
     icon:'/icons/logo.svg'
   }
