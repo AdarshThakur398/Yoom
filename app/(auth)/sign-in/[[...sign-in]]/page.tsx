@@ -1,12 +1,12 @@
-import { SignIn } from '@clerk/nextjs'
-import React from 'react'
+'use client';
+import { SignIn } from '@clerk/nextjs';
 
 const SignInPage = () => {
   return (
-    <main className='flex h-screen w-full items-center justify-center'>
-     <SignIn />
+    <main className="flex h-screen w-full items-center justify-center">
+      <SignIn forceRedirectUrl="/home" />
     </main>
-  )
-}
+  );
+};
 
-export default SignInPage
+export default SignInPage;
